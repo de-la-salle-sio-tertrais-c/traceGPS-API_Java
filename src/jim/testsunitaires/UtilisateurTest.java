@@ -46,12 +46,14 @@ public class UtilisateurTest {
 
 	@Test
 	public void testGetPseudo() {
-		fail("Not yet implemented");
+		assertEquals("Test getPseudo", "toto", utilisateur2.getPseudo());
 	}
 
 	@Test
 	public void testSetPseudo() {
-		fail("Not yet implemented");
+		utilisateur1.setPseudo("Deus");
+		
+		assertEquals("Test setPseudo", "Deus", utilisateur1.getPseudo());
 	}
 
 	@Test
