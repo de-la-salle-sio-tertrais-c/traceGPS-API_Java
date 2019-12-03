@@ -46,12 +46,14 @@ public class UtilisateurTest {
 
 	@Test
 	public void testGetPseudo() {
-		fail("Not yet implemented");
+		assertEquals("Test getPseudo", "toto", utilisateur2.getPseudo());
 	}
 
 	@Test
 	public void testSetPseudo() {
-		fail("Not yet implemented");
+		utilisateur1.setPseudo("Deus");
+		
+		assertEquals("test getPseudo", "Deus", utilisateur1.getPseudo());
 	}
 
 	@Test
@@ -101,13 +103,14 @@ public class UtilisateurTest {
 	}
 
 	@Test
-	public void testGetDateCreation() {
-		fail("Not yet implemented");
+	public void testGetDateCreation() throws ParseException {
+		assertEquals("Test getDateCreation", Outils.convertirEnDateHeure("28/06/2016 14:00:00"), utilisateur2.getDateCreation());
 	}
 
 	@Test
 	public void testSetDateCreation() throws ParseException {
-		fail("Not yet implemented");
+		utilisateur1.setDateCreation(Outils.convertirEnDateHeure("10/01/2000 17:17:00"));
+		assertEquals("Test getDateCreation", Outils.convertirEnDateHeure("10/01/2000 17:17:00"), utilisateur1.getDateCreation());
 	}
 
 	@Test
