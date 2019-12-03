@@ -34,12 +34,14 @@ public class UtilisateurTest {
 
 	@Test
 	public void testGetId() {
-		fail("Not yet implemented");	
+		assertEquals("Test getId", 111, utilisateur2.getId());
 	}
 
 	@Test
 	public void testSetId() {
-		fail("Not yet implemented");
+		utilisateur1.setId(112);
+		
+		assertEquals("test getId", 112, utilisateur1.getId());
 	}
 
 	@Test
@@ -64,7 +66,7 @@ public class UtilisateurTest {
 
 	@Test
 	public void testGetAdrMail() {
-		fail("Not yet implemented");
+		assertEquals("test getAdrMail", "toto@free.fr", utilisateur2.getAdrMail());
 	}
 
 	@Test
