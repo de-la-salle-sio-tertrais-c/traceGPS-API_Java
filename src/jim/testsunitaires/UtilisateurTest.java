@@ -98,12 +98,14 @@ public class UtilisateurTest {
 
 	@Test
 	public void testGetDateCreation() {
-		fail("Not yet implemented");
+		assertEquals("Test getDateCreation", "21/06/2016 14:00:00", utilisateur2.getDateCreation());
 	}
 
 	@Test
 	public void testSetDateCreation() throws ParseException {
-		fail("Not yet implemented");
+		utilisateur1.setPseudo("22/08/2017 16:36:41");
+		
+		assertEquals("Test setDateCréation", "22/08/2017 16:36:41", utilisateur1.getDateCreation());
 	}
 
 	@Test
