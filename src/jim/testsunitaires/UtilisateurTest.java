@@ -71,17 +71,21 @@ public class UtilisateurTest {
 
 	@Test
 	public void testSetAdrMail() {
-		fail("Not yet implemented");
+		utilisateur1.setAdrMail("toto1@free.fr");
+		
+		assertEquals("test getAdrMail", "toto1@free.fr", utilisateur1.getAdrMail());
 	}
 
 	@Test
 	public void testGetNumTel() {
-		fail("Not yet implemented");
+		assertEquals("test getNumTel", "11.22.33.44.55", utilisateur2.getNumTel());
 	}
 
 	@Test
 	public void testSetNumTel() {
-		fail("Not yet implemented");
+		utilisateur1.setNumTel("1212121212");
+		
+		assertEquals("test gestNumTel", "12.12.12.12.12", utilisateur1.getNumTel());
 	}
 
 	@Test
