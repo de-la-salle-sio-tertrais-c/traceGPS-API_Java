@@ -123,7 +123,7 @@ public class UtilisateurTest {
 	}
 
 	@Test
-	public void testGetDateDerniereTrace() {
+	public void testGetDateDerniereTrace() throws ParseException {
 		assertEquals("Test getDateDerniereTrace", Outils.convertirEnDateHeure("28/06/2016 14:00:00"), utilisateur2.getDateDerniereTrace());
 	}
 
