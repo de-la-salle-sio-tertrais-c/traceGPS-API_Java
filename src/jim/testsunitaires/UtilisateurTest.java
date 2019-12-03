@@ -104,7 +104,7 @@ public class UtilisateurTest {
 
 	@Test
 	public void testGetDateCreation() throws ParseException {
-		assertEquals("Test getDateCreation", Outils.convertirEnDateHeure("28/06/2016 14:00:00"), utilisateur2.getDateCreation());
+		assertEquals("Test getDateCreation", Outils.convertirEnDateHeure("21/06/2016 14:00:00"), utilisateur2.getDateCreation());
 	}
 
 	@Test
