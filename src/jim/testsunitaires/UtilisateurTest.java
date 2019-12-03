@@ -46,24 +46,23 @@ public class UtilisateurTest {
 
 	@Test
 	public void testGetPseudo() {
-		assertEquals("Test getPseudo", "toto", utilisateur2.getPseudo());
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetPseudo() {
-		utilisateur1.setPseudo("Deus");
-		
-		assertEquals("Test setPseudo", "Deus", utilisateur1.getPseudo());
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetMdpSha1() {
-		fail("Not yet implemented");
+		assertEquals("Test getMdpSha1", "abcdef", utilisateur2.getMdpSha1());
 	}
 
 	@Test
 	public void testSetMdpSha1() {
-		fail("Not yet implemented");
+		utilisateur1.setMdpSha1("123456");
+		assertEquals("Test setMdpSha1", "123456", utilisateur1.getMdpSha1());
 	}
 
 	@Test
@@ -88,24 +87,23 @@ public class UtilisateurTest {
 
 	@Test
 	public void testGetNiveau() {
-		fail("Not yet implemented");
+		assertEquals("Test getNiveau", 1, utilisateur2.getNiveau());
 	}
 
 	@Test
 	public void testSetNiveau() {
-		fail("Not yet implemented");
+		utilisateur1.setNiveau(2);
+		assertEquals("Test setNiveau", 2, utilisateur1.getNiveau());
 	}
 
 	@Test
 	public void testGetDateCreation() {
-		assertEquals("Test getDateCreation", "21/06/2016 14:00:00", utilisateur2.getDateCreation());
+		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetDateCreation() throws ParseException {
-		utilisateur1.setPseudo("22/08/2017 16:36:41");
-		
-		assertEquals("Test setDateCréation", "22/08/2017 16:36:41", utilisateur1.getDateCreation());
+		fail("Not yet implemented");
 	}
 
 	@Test
@@ -120,12 +118,13 @@ public class UtilisateurTest {
 
 	@Test
 	public void testGetDateDerniereTrace() {
-		fail("Not yet implemented");
+		assertEquals("Test getDateDerniereTrace", Outils.convertirEnDateHeure("28/06/2016 14:00:00"), utilisateur2.getDateDerniereTrace());
 	}
 
 	@Test
 	public void testSetDateDerniereTrace() throws ParseException {
-		fail("Not yet implemented");
+		utilisateur1.setDateDerniereTrace(Outils.convertirEnDateHeure("10/01/2000 17:17:00"));
+		assertEquals("Test getDateDerniereTrace", Outils.convertirEnDateHeure("10/01/2000 17:17:00"), utilisateur1.getDateDerniereTrace());
 	}
 
 	@Test
