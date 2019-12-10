@@ -93,7 +93,7 @@ public class PasserelleServicesWebXML extends PasserelleXML {
 		{	// création d'un nouveau document XML à partir de l'URL du service web et des paramètres
 			String urlDuServiceWeb = _adresseHebergeur + _urlGetTousLesUtilisateurs;
 			urlDuServiceWeb += "?pseudo=" + pseudo;
-			urlDuServiceWeb += "&mdpSha1=" + mdpSha1;
+			urlDuServiceWeb += "&mdp=" + mdpSha1;
 
 			// création d'un flux en lecture (InputStream) à partir du service
 			InputStream unFluxEnLecture = getFluxEnLecture(urlDuServiceWeb);
@@ -203,7 +203,7 @@ public class PasserelleServicesWebXML extends PasserelleXML {
 		{	// création d'un nouveau document XML à partir de l'URL du service web et des paramètres
 			String urlDuServiceWeb = _adresseHebergeur + _urlSupprimerUnUtilisateur;
 			urlDuServiceWeb += "?pseudo=" + pseudo;
-			urlDuServiceWeb += "&mdpSha1=" + mdpSha1;
+			urlDuServiceWeb += "&mdp=" + mdpSha1;
 			urlDuServiceWeb += "&pseudoAsupprimer=" + pseudoAsupprimer;
 
 			// création d'un flux en lecture (InputStream) à partir du service
@@ -238,7 +238,7 @@ public class PasserelleServicesWebXML extends PasserelleXML {
 		{	// création d'un nouveau document XML à partir de l'URL du service web et des paramètres
 			String urlDuServiceWeb = _adresseHebergeur + _urlChangerDeMdp;
 			urlDuServiceWeb += "?pseudo=" + pseudo;
-			urlDuServiceWeb += "&mdpSha1=" + mdpSha1;
+			urlDuServiceWeb += "&mdp=" + mdpSha1;
 			urlDuServiceWeb += "&nouveauMdp=" + nouveauMdp;
 			urlDuServiceWeb += "&confirmationMdp=" + confirmationMdp;
 
