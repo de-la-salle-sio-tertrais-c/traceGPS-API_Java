@@ -1,3 +1,5 @@
+
+
 package jim.testsunitaires;
 
 import static org.junit.Assert.*;
@@ -31,6 +33,7 @@ public class PasserelleServiceWebXMLTest {
 		
 	@Test
 	public void testCreerUnUtilisateur() {
+
 		String msg = PasserelleServicesWebXML.creerUnUtilisateur("jim", "delasalle.sio.lebreton.h@gmail.com", "1122334455");
 		assertEquals("Erreur : pseudo trop court (8 car minimum) ou déjà existant.", msg);
 		
@@ -49,6 +52,7 @@ public class PasserelleServiceWebXMLTest {
 		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "de.la.salle.sio.eleves@gmail.com", "1122334455");
 		assertEquals("Erreur : pseudo trop court (8 car minimum) ou déjà existant.", msg);
 	}
+
 	
 	@Test
 	public void testSupprimerUnUtilisateur() {
