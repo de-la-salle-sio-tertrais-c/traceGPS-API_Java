@@ -26,8 +26,25 @@ public class PasserelleServiceWebXMLTest {
 		
 	@Test
 	public void testCreerUnUtilisateur() {
-		fail("Not yet implemented");
+		String msg = PasserelleServicesWebXML.creerUnUtilisateur("jim", "delasalle.sio.eleves@gmail.com", "1122334455");
+		assertEquals("Erreur : pseudo trop court (8 car minimum) ou déjà existant.", msg);
+		
+		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasalle.sio.elevesgmail.com", "1122334455");
+		assertEquals("Erreur : adresse mail incorrecte ou déjà existante.", msg);
+
+		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasalle.sio.eleves@gmailcom", "1122334455");
+		assertEquals("Erreur : adresse mail incorrecte ou déjà existante.", msg);
+		
+		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasalle.sio.eleves@gmail.com", "1122334455");
+		assertEquals("Erreur : adresse mail incorrecte ou déjà existante.", msg);
+		
+		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasallesioeleves@gmail.com", "1122334455");
+		assertEquals("Enregistrement effectué ; vous allez recevoir un courriel avec votre mot de passe.", msg);
+		
+		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "de.la.salle.sio.eleves@gmail.com", "1122334455");
+		assertEquals("Erreur : pseudo trop court (8 car minimum) ou déjà existant.", msg);	
 	}
+
 	
 	@Test
 	public void testSupprimerUnUtilisateur() {
