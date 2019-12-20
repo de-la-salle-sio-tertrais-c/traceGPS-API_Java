@@ -273,7 +273,7 @@ public class PasserelleServicesWebXML extends PasserelleXML {
 		String reponse = "";
 		try
 		{
-			String urlDuServiceWeb = _adresseHebergeur + _urlChangerDeMdp;
+			String urlDuServiceWeb = _adresseHebergeur + _urlDemanderMdp;
 			urlDuServiceWeb += "?pseudo=" + pseudo; 
 			
 			// création d'un flux en lecture (InputStream) à partir du service

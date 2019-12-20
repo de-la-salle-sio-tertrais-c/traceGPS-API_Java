@@ -1,5 +1,3 @@
-
-
 package jim.testsunitaires;
 
 import static org.junit.Assert.*;
@@ -95,7 +93,7 @@ public class PasserelleServiceWebXMLTest {
 		String msg = PasserelleServicesWebXML.demanderMdp("jim");
 		assertEquals("Erreur : pseudo inexistant.", msg);
 		
-		msg = PasserelleServicesWebXML.demanderMdp("europa");
+		msg = PasserelleServicesWebXML.demanderMdp("neon");
 		assertEquals("Vous allez recevoir un courriel avec votre nouveau mot de passe.", msg);
 	}
 	
