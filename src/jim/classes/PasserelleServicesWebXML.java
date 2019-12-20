@@ -25,7 +25,7 @@ public class PasserelleServicesWebXML extends PasserelleXML {
 	// Adresse de l'hébergeur Internet
 	//private static String _adresseHebergeur = "http://sio.lyceedelasalle.fr/tracegps/api/";
 	// Adresse du localhost en cas d'exécution sur le poste de développement (projet de tests des classes)
-	private static String _adresseHebergeur = "http://127.0.0.1/ws-php-tertrais/tracegps/api/";
+	private static String _adresseHebergeur = "http://127.0.0.1/ws-php-cormier/tracegps/api/";
 
 	// Noms des services web déjà traités par la passerelle
 	private static String _urlArreterEnregistrementParcours = "ArreterEnregistrementParcours";
@@ -270,7 +270,30 @@ public class PasserelleServicesWebXML extends PasserelleXML {
 	//    pseudo : le pseudo de l'utilisateur
 	public static String demanderMdp(String pseudo)
 	{
-		return "";				// METHODE A CREER ET TESTER
+		String reponse = "";
+		try
+		{
+			String urlDuServiceWeb = _adresseHebergeur + _urlDemanderMdp;
+			urlDuServiceWeb += "?pseudo=" + pseudo; 
+			
+			// création d'un flux en lecture (InputStream) à partir du service
+			InputStream unFluxEnLecture = getFluxEnLecture(urlDuServiceWeb);
+			
+			// création d'un objet org.w3c.dom.Document à partir du flux ; il servira à parcourir le flux XML
+			Document leDocument = getDocumentXML(unFluxEnLecture);
+			
+			// parsing du flux XML
+			Element racine = (Element) leDocument.getElementsByTagName("data").item(0);
+			reponse = racine.getElementsByTagName("reponse").item(0).getTextContent();
+			
+			// retour de la réponse du service web
+			return reponse;
+		}
+		catch (Exception ex)
+		{
+			String msg = "Erreur : " + ex.getMessage();
+			return msg;
+		}
 	}
 	
 	// Méthode statique pour obtenir la liste des utilisateurs que j'autorise (service GetLesUtilisateursQueJautorise)
