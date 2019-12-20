@@ -25,7 +25,7 @@ public class PasserelleServicesWebXML extends PasserelleXML {
 	// Adresse de l'hébergeur Internet
 	//private static String _adresseHebergeur = "http://sio.lyceedelasalle.fr/tracegps/api/";
 	// Adresse du localhost en cas d'exécution sur le poste de développement (projet de tests des classes)
-	private static String _adresseHebergeur = "http://127.0.0.1/ws-php-cormier/tracegps/api/";
+	private static String _adresseHebergeur = "http://127.0.0.1/ws-php-tertrais/tracegps/api/";
 
 	// Noms des services web déjà traités par la passerelle
 	private static String _urlArreterEnregistrementParcours = "ArreterEnregistrementParcours";
@@ -303,7 +303,7 @@ public class PasserelleServicesWebXML extends PasserelleXML {
 	//    lesUtilisateurs : collection (vide) à remplir à partir des données fournies par le service web
 	public static String getLesUtilisateursQueJautorise(String pseudo, String mdpSha1, ArrayList<Utilisateur> lesUtilisateurs)
 	{
-		return "";				// METHODE A CREER ET TESTER
+		return "";
 	}
 
 	// Méthode statique pour obtenir la liste des utilisateurs qui m'autorisent (service GetLesUtilisateursQuiMautorisent)
