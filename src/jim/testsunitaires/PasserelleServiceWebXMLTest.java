@@ -1,5 +1,3 @@
-
-
 package jim.testsunitaires;
 
 import static org.junit.Assert.*;
@@ -33,34 +31,52 @@ public class PasserelleServiceWebXMLTest {
 		
 	@Test
 	public void testCreerUnUtilisateur() {
-		String msg = PasserelleServicesWebXML.creerUnUtilisateur("jim", "delasalle.sio.eleves@gmail.com", "1122334455");
-		assertEquals("Erreur : pseudo trop court (8 car minimum) ou dÈj‡ existant.", msg);
-		
-		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasalle.sio.elevesgmail.com", "1122334455");
-		assertEquals("Erreur : adresse mail incorrecte ou dÈj‡ existante.", msg);
 
-		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasalle.sio.eleves@gmailcom", "1122334455");
-		assertEquals("Erreur : adresse mail incorrecte ou dÈj‡ existante.", msg);
+		String msg = PasserelleServicesWebXML.creerUnUtilisateur("jim", "delasalle.sio.lebreton.h@gmail.com", "1122334455");
+		assertEquals("Erreur : pseudo trop court (8 car minimum) ou d√©j√† existant.", msg);
 		
-		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasalle.sio.eleves@gmail.com", "1122334455");
-		assertEquals("Erreur : adresse mail incorrecte ou dÈj‡ existante.", msg);
+		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasalle.sio.lebreton.h@gmail.com", "1122334455");
+		assertEquals("Erreur : adresse mail incorrecte ou d√©j√† existante.", msg);
+
+		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasalle.sio.lebreton.hgmail.com", "1122334455");
+		assertEquals("Erreur : adresse mail incorrecte ou d√©j√† existante.", msg);
+		
+		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasalle.sio.lebreton.h@gmailcom", "1122334455");
+		assertEquals("Erreur : adresse mail incorrecte ou d√©j√† existante.", msg);
 		
 		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "delasallesioeleves@gmail.com", "1122334455");
-		assertEquals("Enregistrement effectuÈ ; vous allez recevoir un courriel avec votre mot de passe.", msg);
+		assertEquals("Enregistrement effectu√© ; vous allez recevoir un courriel avec votre mot de passe.", msg);
 		
 		msg = PasserelleServicesWebXML.creerUnUtilisateur("turlututu", "de.la.salle.sio.eleves@gmail.com", "1122334455");
-		assertEquals("Erreur : pseudo trop court (8 car minimum) ou dÈj‡ existant.", msg);	
+		assertEquals("Erreur : pseudo trop court (8 car minimum) ou d√©j√† existant.", msg);
 	}
-
 	
 	@Test
 	public void testSupprimerUnUtilisateur() {
-		fail("Not yet implemented");	
+		String msg;
+		msg = PasserelleServicesWebXML.supprimerUnUtilisateur("europa", Outils.sha1("mdputilisateurrrrrr"), "toto");
+		assertEquals("Erreur : authentification incorrecte.", msg);
+		
+		msg = PasserelleServicesWebXML.supprimerUnUtilisateur("europa", Outils.sha1("mdputilisateur"), "toto");
+		assertEquals("Erreur : authentification incorrecte.", msg);
+		
+		msg = PasserelleServicesWebXML.supprimerUnUtilisateur("admin", Outils.sha1("mdpadminnnnn"), "toto");
+		assertEquals("Erreur : authentification incorrecte.", msg);
+		
+		msg = PasserelleServicesWebXML.supprimerUnUtilisateur("admin", Outils.sha1("mdpadmin"), "toto");
+		assertEquals("Erreur : pseudo utilisateur inexistant.", msg);
+		
+		msg = PasserelleServicesWebXML.supprimerUnUtilisateur("admin", Outils.sha1("mdpadmin"), "neon");
+		assertEquals("Erreur : suppression impossible ; cet utilisateur poss√®de encore des traces.", msg);	
+		
+		msg = PasserelleServicesWebXML.supprimerUnUtilisateur("admin", Outils.sha1("mdpadmin"), "turlututu");
+		assertEquals("Suppression effectu√©e ; un courriel va √™tre envoy√© √† l'utilisateur.", msg);	
 	}
 	
 	@Test
 	public void testChangerDeMdp() {
 		String msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateur"), "passepasse", "passepassepasse");
+<<<<<<< HEAD
 		assertEquals("Erreur : le nouveau mot de passe et sa confirmation sont diffÈrents.", msg);
 		
 		msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateurrrr"), "passepasse", "passepasse");
@@ -71,12 +87,28 @@ public class PasserelleServiceWebXMLTest {
 		
 		msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateurrrr"), "mdputilisateur", "mdputilisateur");
 		assertEquals("Enregistrement effectuÈ ; vous allez recevoir un courriel de confirmation.", msg);
+=======
+		assertEquals("Erreur : le nouveau mot de passe et sa confirmation sont diff√©rents.", msg);
+		
+		msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateurrrr"), "passepasse", "passepasse");
+		assertEquals("Erreur : authentification incorrecte.", msg);
+		
+		msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateur"), "mdputilisateurrrr", "mdputilisateurrrr");
+		assertEquals("Enregistrement effectu√© ; vous allez recevoir un courriel de confirmation.", msg);
+		
+		msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateurrrr"), "mdputilisateur", "mdputilisateur");
+		assertEquals("Enregistrement effectu√© ; vous allez recevoir un courriel de confirmation.", msg);
+>>>>>>> branch 'master' of https://github.com/de-la-salle-sio-tertrais-c/traceGPS-API_Java.git
 	}	
 
 
 	@Test
 	public void testDemanderMdp() {
-		fail("Not yet implemented");
+		String msg = PasserelleServicesWebXML.demanderMdp("jim");
+		assertEquals("Erreur : pseudo inexistant.", msg);
+		
+		msg = PasserelleServicesWebXML.demanderMdp("neon");
+		assertEquals("Vous allez recevoir un courriel avec votre nouveau mot de passe.", msg);
 	}
 	
 	@Test
