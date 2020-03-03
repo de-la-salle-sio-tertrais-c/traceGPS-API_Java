@@ -76,18 +76,6 @@ public class PasserelleServiceWebXMLTest {
 	@Test
 	public void testChangerDeMdp() {
 		String msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateur"), "passepasse", "passepassepasse");
-<<<<<<< HEAD
-		assertEquals("Erreur : le nouveau mot de passe et sa confirmation sont différents.", msg);
-		
-		msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateurrrr"), "passepasse", "passepasse");
-		assertEquals("Erreur : authentification incorrecte.", msg);
-		
-		msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateur"), "mdputilisateurrrr", "mdputilisateurrrr");
-		assertEquals("Enregistrement effectué ; vous allez recevoir un courriel de confirmation.", msg);
-		
-		msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateurrrr"), "mdputilisateur", "mdputilisateur");
-		assertEquals("Enregistrement effectué ; vous allez recevoir un courriel de confirmation.", msg);
-=======
 		assertEquals("Erreur : le nouveau mot de passe et sa confirmation sont diffÃ©rents.", msg);
 		
 		msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateurrrr"), "passepasse", "passepasse");
@@ -98,7 +86,7 @@ public class PasserelleServiceWebXMLTest {
 		
 		msg = PasserelleServicesWebXML.changerDeMdp("europa", Outils.sha1("mdputilisateurrrr"), "mdputilisateur", "mdputilisateur");
 		assertEquals("Enregistrement effectuÃ© ; vous allez recevoir un courriel de confirmation.", msg);
->>>>>>> branch 'master' of https://github.com/de-la-salle-sio-tertrais-c/traceGPS-API_Java.git
+
 	}	
 
 
